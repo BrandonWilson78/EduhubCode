@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="snow.app.eduhub.viewmodels.ProfileViewModel" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_30"
+        tools:context=".ui.ProfileFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_15"
+
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_20sdp">
+
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:padding="5dp"
+                android:src="@drawable/ic_edit_w"
+                android:visibility="gone"
+                app:tint="@color/red" />
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:profile="@{viewModel.profile}"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/semi"
+                android:text="First Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_ed_stroke_grey"
+                android:fontFamily="@font/regular"
+
+
+                android:paddingLeft="@dimen/_12sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@={viewModel.first_name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/semi"
+                android:text="Last Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_ed_stroke_grey"
+                android:fontFamily="@font/regular"
+
+                android:paddingLeft="@dimen/_12sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@={viewModel.last_name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_20"
+                android:fontFamily="@font/semi"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/round_ed_stroke_grey"
+                android:clickable="false"
+                android:editable="false"
+                android:focusable="false"
+                android:fontFamily="@font/regular"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="@dimen/_12sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@={viewModel.email}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_20"
+                android:fontFamily="@font/semi"
+                android:text="Phone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:background="@drawable/round_ed_stroke_grey"
+                android:orientation="horizontal">
+
+                <com.rilixtech.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/padding_10"
+                    app:ccp_textColor="@color/black"
+                    app:ccp_textSize="@dimen/text17" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:baselineAligned="false"
+                    android:digits="1234567890"
+                     android:fontFamily="@font/regular"
+                     android:inputType="number"
+                    android:maxLength="10"
+                    android:text="@={viewModel.number}"
+                    android:padding="@dimen/padding_12"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/text17" />
+            </LinearLayout>
+            <!--    <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/round_ed_stroke_grey"
+                    android:digits="+1234567890"
+                    android:fontFamily="@font/regular"
+                    android:inputType="phone"
+
+                    android:maxLength="14"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:text="@={viewModel.number}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text17" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_20"
+                android:fontFamily="@font/semi"
+                android:text="Grade"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/round_ed_stroke_grey"
+                android:drawableRight="@drawable/down_arrow"
+android:id="@+id/ed_class"
+                android:drawableTint="@color/textcolordark"
+                android:editable="false"
+                android:focusable="false"
+                android:fontFamily="@font/regular"
+                 android:paddingLeft="@dimen/_12sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@={viewModel.classname}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_20"
+                android:fontFamily="@font/semi"
+                android:text="School"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/round_ed_stroke_grey"
+                android:fontFamily="@font/regular"
+                android:inputType="text"
+
+                android:paddingLeft="@dimen/_12sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@={viewModel.school}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_20"
+                android:fontFamily="@font/semi"
+                android:text="Address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+
+                android:background="@drawable/round_ed_stroke_grey"
+                android:fontFamily="@font/regular"
+                 android:paddingLeft="@dimen/_12sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@={viewModel.address}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text17" />
+
+
+            <TextView
+                android:id="@+id/tv_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_20"
+                android:background="@drawable/round_ed"
+                android:backgroundTint="@color/red"
+
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:paddingLeft="@dimen/margin_side_button"
+                android:paddingTop="@dimen/padding_15"
+                android:paddingRight="@dimen/margin_side_button"
+                android:paddingBottom="@dimen/padding_15"
+                android:text="Update"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text17" />
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

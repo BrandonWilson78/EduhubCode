@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rv_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_8"
+    android:background="@drawable/round_ed_stroke_grey_lightgrey">
+
+    <LinearLayout
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:padding="@dimen/margin_8">
+
+            <TextView
+                android:id="@+id/pdf_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_pdf"
+                android:fontFamily="@font/bold"
+                android:maxLines="3"
+                android:text=""
+                 android:textColor="@color/black"
+                android:textSize="@dimen/text_15" />
+
+            <ImageView
+                android:id="@+id/iv_pdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/padding_10"
+                android:src="@drawable/ic_pdf_pdf_2" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_pdf_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:maxLines="2"
+            android:layout_gravity="start"
+            android:paddingHorizontal="@dimen/margin_8"
+            android:paddingBottom="@dimen/margin_5"
+            android:text="@string/lipsum"
+            android:textColor="@color/textcolordark"
+            android:textSize="@dimen/text_13" />
+
+
+        <TextView
+            android:id="@+id/view_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:fontFamily="@font/bold"
+            android:visibility="gone"
+            android:paddingHorizontal="@dimen/margin_8"
+            android:text="View PDF"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_13" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:layout_marginHorizontal="@dimen/margin_8"
+            android:layout_marginVertical="@dimen/margin_5"
+            android:background="@color/d_grey"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/half_rounded_ed_grey"
+            android:layout_below="@+id/ll_top"
+
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_10">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+android:layout_gravity="center"
+                android:paddingHorizontal="@dimen/margin_8">
+
+                <TextView
+                    android:id="@+id/tv_teachername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tv_rating"
+                    android:fontFamily="@font/bold"
+                    android:maxLines="1"
+                    android:paddingRight="@dimen/margin_5"
+                    android:text="Mr. James"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_15" />
+
+                <TextView
+                    android:id="@+id/tv_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:drawableLeft="@drawable/ic_star_fil"
+
+                     android:drawablePadding="@dimen/margin_5"
+                    android:fontFamily="@font/semi"
+                    android:text="4.5"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_15" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_view_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/semi"
+                android:paddingHorizontal="@dimen/margin_8"
+                android:layout_gravity="left"
+                android:text="View Profile"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_11sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
